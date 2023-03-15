@@ -2,20 +2,23 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const inputText = () => (
+  const inputText = (icon: string) => (
     <input
-      className="text-right w-full bg-neutral-100"
+      className={`w-full rounded-lg bg-neutral-100 ${icon} bg-[center_left_1rem] bg-no-repeat px-4 py-2 text-right text-xl text-neutral-500`}
       type="number"
       placeholder="0"
     />
   );
+  const radioSelect = () => <input type="radio" name="" id="" />;
   return (
-    <div className="bg-neutral-200 h-screen w-full flex flex-col justify-end">
-      <div>SPLITTER</div>
-      <form className="bg-neutral-50 p-10 w-full rounded-t-3xl">
+    <div className="flex h-screen w-full flex-col justify-end bg-neutral-200 font-space-mono text-neutral-400">
+      <div className="m-auto">
+        <img src="./logo.svg" alt="Logo" />
+      </div>
+      <form className="w-full rounded-t-3xl bg-white p-10">
         <div className="w-full">
           <div>Bill</div>
-          {inputText()}
+          {inputText("bg-icon-dollar")}
         </div>
         <div className="w-full">
           <div>Select Tip %</div>
@@ -30,7 +33,7 @@ function App() {
         </div>
         <div className="w-full">
           <div>Number of People</div>
-          <input type="text" />
+          {inputText("bg-icon-person")}
         </div>
         <div className="w-full">
           <div>
